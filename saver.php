@@ -9,7 +9,7 @@ $feedback = $_POST['feedback'];
 // Save Form Responses into Txt file
 
 $file=fopen("result.txt", "a");
-$write=("<p>$title<br>$email<br>$feedback</p>");
+$write= ($title . "\n" . $email . "\n" . $feedback);
 fwrite($file, $write);
 fclose($file);
 
@@ -29,7 +29,7 @@ $message = mail ($email, $mesSubject, $mes)
 <h1>Thank you! Here are your responses</h1>
 <?php
 echo "Your email is " . $email . "<br>";
-echo "Feedback's Title:" . $title . "<br>";
+echo "Feedback's Title: " . $title . "<br>";
 echo "Submitted Feedback: " . $feedback . "<br>";
 ?>
 
